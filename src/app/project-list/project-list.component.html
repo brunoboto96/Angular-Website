@@ -1,5 +1,40 @@
+<div class="container my-5 text-center d-block">
+    <div class="avatar" style="background-image:url(&quot;./assets/img/avatar/avatar.jpg&quot;);"></div>
+    <p><strong>22 </strong><img src="./assets/img/pt.svg" width="25px&quot;" alt="PT"></p>
+    <div class="about-me">
+        <p>Hey there! I'm <strong>Bruno Boto&nbsp;</strong>. I am currently studying Computer Science Bsc. I have
+            passion for adventure, self-development, technology and sports.</p>
+    </div>
+</div>
+
+<div class="dropdown-divider mb-3" id="projects"></div>
 <div class="jumbotron">
     <h1 class="text-center">Projects</h1>
+</div>
+<div class="row">
+    <div *ngFor="let project of projects; index as projectId" class="col-4 p-2 mb-3">
+        <div class="card text-white bg-warning mb-0">
+            <div class="card-header">{{ project.status }}</div>
+        </div>
+        <div class="card">
+
+            <img src="{{ project.img }}" class="card-img-top" alt="{{ project.alias }}">
+            <div class="card-img-overlay mt-1">
+                <h5 class="text-center text-light">{{ project.alias }}</h5>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a></h5>
+                <p class="card-text">{{ project.description }}</p>
+                <a class="btn btn-primary text-white">Enter</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="dropdown-divider mb-3" id="archive"></div>
+<div class="jumbotron">
+    <h1 class="text-center">Archive</h1>
 </div>
 <div class="row">
     <div *ngFor="let project of projects; index as projectId" class="col-4 p-2 mb-3">
