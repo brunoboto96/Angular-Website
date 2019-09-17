@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Global Styles 
 
 * {
     font-family: 'Roboto', Arial, sans-serif;
@@ -21,7 +21,7 @@
     padding: 0 16px;
   }
   
-  /* Text */
+  /* Text 
   
   h1 {
     font-size: 32px;
@@ -39,7 +39,7 @@
     font-size: 14px;
   }
   
-  /* Hyperlink */
+  /* Hyperlink 
   
   a {
     cursor: pointer;
@@ -51,7 +51,7 @@
     opacity: 0.8;
   }
   
-  /* Input */
+  /* Input 
   
   input {
     font-size: 14px;
@@ -69,7 +69,7 @@
     text-transform: uppercase;
   }
   
-  /* Button */
+  /* Button 
   .button, button {
     display: inline-flex;
     align-items: center;
@@ -128,7 +128,7 @@
     flex: 1;
   }
   
-  /* Checkout Cart, Shipping Prices */
+  /* Checkout Cart, Shipping Prices 
   
   .cart-item, .shipping-item {
     width: 100%;
@@ -143,18 +143,35 @@
     background-color: #EEEEEE;
   }
   
-  .avatar {
-    width: 150px;
-    height: 150px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin: auto;
-    border-radius: 100px;
-    margin-bottom: 30px;
-  }
+ 
+*/
+  /* Icons Google Font */
+  /* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-96 { font-size: 96px; }
 
-  .bargrad {
-    background: linear-gradient(120deg, #7f70f5, #0ea0ff);
-  }
+.avatar {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  border-radius: 100px;
+  margin-bottom: 30px;
+}
+
+.bargrad {
+  background: linear-gradient(120deg, #7f70f5, #0ea0ff);
+}
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
  
   

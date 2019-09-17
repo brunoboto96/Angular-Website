@@ -1,0 +1,9 @@
+//*****/TODO/*****//
+
+<title> => {{ title }}
+
+main.js => colors
+
+images => arrays
+
+django => db 

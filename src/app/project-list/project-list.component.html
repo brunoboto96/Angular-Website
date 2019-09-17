@@ -13,19 +13,22 @@
 </div>
 <div class="row">
     <div *ngFor="let project of projects; index as projectId" class="col-4 p-2 mb-3">
-        <div class="card text-white bg-warning mb-0">
-            <div class="card-header">{{ project.status }}</div>
-        </div>
-        <div class="card">
 
-            <img src="{{ project.img }}" class="card-img-top" alt="{{ project.alias }}">
-            <div class="card-img-overlay mt-1">
-                <h5 class="text-center text-light">{{ project.alias }}</h5>
+        <div *ngIf="project.archive == 0">
+            <div class="card text-white bg-warning mb-0">
+                <div class="card-header">{{ project.status }}</div>
             </div>
-            <div class="card-body">
-                <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a></h5>
-                <p class="card-text">{{ project.description }}</p>
-                <a class="btn btn-primary text-white">Enter</a>
+            <div class="card">
+
+                <img src="{{ project.img }}" class="card-img-top" alt="{{ project.alias }}">
+                <div class="card-img-overlay mt-1">
+                    <h5 class="text-center text-light">{{ project.alias }}</h5>
+                </div>
+                <div class="card-body" style="z-index: 1">
+                    <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a></h5>
+                    <p class="card-text">{{ project.descr }}</p>
+                    <a class="btn btn-primary text-white" href="./app/projects/index.html">Enter</a>
+                </div>
             </div>
         </div>
     </div>
@@ -38,19 +41,41 @@
 </div>
 <div class="row">
     <div *ngFor="let project of projects; index as projectId" class="col-4 p-2 mb-3">
-        <div class="card text-white bg-warning mb-0">
-            <div class="card-header">{{ project.status }}</div>
+        <div *ngIf="project.archive == 1">
+            <div class="card text-white bg-warning mb-0">
+                <div class="card-header">{{ project.status }}</div>
+            </div>
+            <div class="card">
+                <img src="{{ project.img }}" class="card-img-top" alt="{{ project.alias }}">
+                <div class="card-img-overlay mt-1">
+                    <h5 class="text-center text-light">{{ project.alias }}</h5>
+                </div>
+                <div class="card-body" style="z-index: 1">
+                    <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a></h5>
+                    <p class="card-text">{{ project.descr }}</p>
+                    <a class="btn btn-primary text-white" [routerLink]="['/projects', project.alias]">Enter</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dropdown-divider mb-3" id="archive"></div>
+<div class="jumbotron">
+    <h1 class="text-center">Special Skills</h1>
+</div>
+<div class="row">
+    <div *ngFor="let skill of skills; index as skillId" class="col-4 p-2 mb-3">
+        <div class="card-header">
+            <div class="text-center">
+                <i class="material-icons md-96">movie</i>
+            </div>
         </div>
         <div class="card">
-
-            <img src="{{ project.img }}" class="card-img-top" alt="{{ project.alias }}">
-            <div class="card-img-overlay mt-1">
-                <h5 class="text-center text-light">{{ project.alias }}</h5>
-            </div>
             <div class="card-body">
-                <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a></h5>
-                <p class="card-text">{{ project.description }}</p>
-                <a class="btn btn-primary text-white">Enter</a>
+                <h5 class="card-title"><a [title]="skill.category + ' details'">{{ skill.category }}</a></h5>
+                <p class="card-text">{{ skill.descr }}</p>
+                <a class="btn btn-primary text-white" [routerLink]="['/skills', skillId]">Enter</a>
             </div>
         </div>
     </div>

@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { RouterModule } from '@angular/router';
 import { ProjectListComponent } from './project-list/project-list.component';
+import { SkillListComponent } from './skill-list/skill-list.component';
+import { CategoryListComponent } from './category-list/category-list.component';
+import { SkillprojectDetailsComponent } from './skillproject-details/skillproject-details.component';
+import { CategoryDetailsComponent } from './category-details/category-details.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 
 @NgModule({
@@ -13,12 +18,22 @@ import { ProjectListComponent } from './project-list/project-list.component';
     AppComponent,
     TopBarComponent,
     ProjectListComponent,
+    SkillListComponent,
+    CategoryListComponent,
+    SkillprojectDetailsComponent,
+    CategoryDetailsComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path: '', component: ProjectListComponent },
-     // { path: 'products/:productId', component: ProductDetailsComponent },
+      { path: 'projects/:project.alias', component: ProjectsComponent },
+      { path: 'skills/:skillId', component: SkillListComponent },
+      { path: 'skillsp/:skillprojectId', component: SkillprojectDetailsComponent },
+      { path: 'categories', component: CategoryListComponent },
+      { path: 'categories/:category', component: CategoryDetailsComponent },
+      
     ])
   ],
   providers: [],

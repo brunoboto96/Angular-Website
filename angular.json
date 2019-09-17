@@ -21,7 +21,8 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "MEF/refuge.html", "input": "src/app/projects/MEF/refuge.html", "output": "/projects/MEF/refuge" }
             ],
             "styles": [
               "src/styles.css"
