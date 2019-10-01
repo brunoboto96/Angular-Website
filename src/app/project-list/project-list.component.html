@@ -15,19 +15,41 @@
     <div *ngFor="let project of projects; index as projectId" class="col-4 p-2 mb-3">
 
         <div *ngIf="project.archive == 0">
-            <div class="card text-white bg-warning mb-0">
-                <div class="card-header">{{ project.status }}</div>
-            </div>
-            <div class="card">
-
-                <img src="{{ project.img }}" class="card-img-top" alt="{{ project.alias }}">
-                <div class="card-img-overlay mt-1">
-                    <h5 class="text-center text-light">{{ project.alias }}</h5>
+            <div *ngIf="project.static == 0">
+                <div class="card text-white bg-warning mb-0">
+                    <div class="card-header">{{ project.status }}</div>
                 </div>
-                <div class="card-body" style="z-index: 1">
-                    <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a></h5>
-                    <p class="card-text">{{ project.descr }}</p>
-                    <a class="btn btn-primary text-white" href="./app/projects/index.html">Enter</a>
+                <div class="card">
+
+                    <img src="{{ project.img }}" class="card-img-top project-logo" alt="{{ project.alias }}">
+                    <div class="card-img-overlay mt-1">
+                        <h5 class="text-center text-light">{{ project.alias }}</h5>
+                    </div>
+                    <div class="card-body" style="z-index: 1">
+                        <a [routerLink]="['/categories', project.category]" class="badge badge-dark p-1">{{ project.category }}</a><br>
+                        <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a></h5>
+                        <p class="card-text">{{ project.descr }}</p>
+                        <a class="btn btn-primary text-white" href="./app/projects/index.html">Enter</a>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="project.static == 1">
+                <div class="card text-white bg-warning mb-0">
+                    <div class="card-header">{{ project.status }}</div>
+                </div>
+                <div class="card">
+
+                    <img src="{{ project.img }}" class="card-img-top project-logo" alt="{{ project.alias }}">
+                    <div class="card-img-overlay mt-1">
+
+                        <h5 class="text-center text-light">{{ project.alias }}</h5>
+                    </div>
+                    <div class="card-body" style="z-index: 1">
+                        <a [routerLink]="['/categories', project.category]" class="badge badge-dark p-1">{{ project.category }}</a><br>
+                        <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a></h5>
+                        <p class="card-text">{{ project.descr }}</p>
+                        <a class="btn btn-primary text-white" href="assets/static/{{ project.url }}">Enter</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -46,7 +68,7 @@
                 <div class="card-header">{{ project.status }}</div>
             </div>
             <div class="card">
-                <img src="{{ project.img }}" class="card-img-top" alt="{{ project.alias }}">
+                <img src="{{ project.img }}" class="card-img-top project-logo" alt="{{ project.alias }}">
                 <div class="card-img-overlay mt-1">
                     <h5 class="text-center text-light">{{ project.alias }}</h5>
                 </div>
@@ -54,7 +76,7 @@
                     <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a></h5>
                     <p class="card-text">{{ project.descr }}</p>
                     <a class="btn btn-primary text-white" [routerLink]="['/projects', project.alias]">Enter</a>
-                    
+
                 </div>
             </div>
         </div>

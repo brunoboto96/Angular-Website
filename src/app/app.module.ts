@@ -10,7 +10,6 @@ import { SkillListComponent } from './skill-list/skill-list.component';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { SkillprojectDetailsComponent } from './skillproject-details/skillproject-details.component';
 import { CategoryDetailsComponent } from './category-details/category-details.component';
-import { ProjectsComponent } from './projects/projects.component';
 
 
 @NgModule({
@@ -22,13 +21,11 @@ import { ProjectsComponent } from './projects/projects.component';
     CategoryListComponent,
     SkillprojectDetailsComponent,
     CategoryDetailsComponent,
-    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path: '', component: ProjectListComponent },
-      { path: 'projects/:project.alias', component: ProjectsComponent },
       { path: 'skills/:skillId', component: SkillListComponent },
       { path: 'skillsp/:skillprojectId', component: SkillprojectDetailsComponent },
       { path: 'categories', component: CategoryListComponent },

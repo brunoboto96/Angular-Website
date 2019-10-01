@@ -11,5 +11,12 @@ export const categories = [
     {
         name: '3Dmodeling'
     },
+    {
+        name: 'microcontrollers'
+    },
+    {
+        name: 'gamedev'
+    },
+    
     
   ];
